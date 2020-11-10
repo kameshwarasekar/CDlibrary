@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-#include<conio.h>
+//#include<conio>
 #include<stdio.h>
 #include<cstdio>
 #include<process.h>
@@ -391,7 +391,7 @@ cout<<"Book issued successfully Please Note: Write current date in backside of b
 					}
 		    		}
 		  		if(flag==0)
-		    			cout<<"Book no does not exist";
+		    			cout<<"Book does not exist";
 			}
 	    		else
 		  		cout<<"You have not returned the last book ";
@@ -468,7 +468,7 @@ void search()
   {
     found=1;
     st.show_member();
-    while(fp1.read((char*)bk,sizeof(book))&&flag==0)
+    while(fp1.read((char*)&bk,sizeof(book))&&flag==0)
      {
       if(strcmpi(bk.retbno(),st.retstbno())==0)
          { bk.show_book();
@@ -532,7 +532,7 @@ void admin_menu()
    	}
  
 }
-void main()
+int main()
 {
 	int ch;
 	do
@@ -557,5 +557,7 @@ void main()
 		  	case 4:exit(0);
 		}
     	}while(ch!='4');
+
+        return;
 }
 
