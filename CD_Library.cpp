@@ -4,6 +4,8 @@
 #include<stdio.h>
 #include<process.h>
 #include<string.h>
+#include<string>
+using namespace std;
 class book
 {
 	char bno[50];
@@ -85,7 +87,7 @@ public:
 
 	void modify_member()
 	{
-		cout<<”Admission no.:"<<admno;
+		cout<<"Admission no.:"<<admno;
 		cout<<"Modify Member Name:";
 		gets(name);
 	}
@@ -385,8 +387,7 @@ void book_issue()
        					int pos=-1*sizeof(st);
 						fp.seekp(pos,ios::cur);
 						fp.write((char*)&st,sizeof(member));
-cout<<"Book issued successfully Please Note: Write current date 
-in backside of book and submit within 15 days fine Rs. 1 for each day after 15 days period";
+cout<<"Book issued successfully Please Note: Write current date in backside of book and submit within 15 days fine Rs. 1 for each day after 15 days period";
 					}
 		    		}
 		  		if(flag==0)
@@ -457,10 +458,10 @@ void search()
 {
  char sn[50],bn[50];
  int found=0,flag=0;
- cout<<”enter admission number”;
+ cout<<"enter admission number";
  cin>>sn;
- fp.open(“member.dat”,ios::in|ios::out);
- fp1.open(“book.dat”,ios::in|ios::out);
+ fp.open("member.dat",ios::in|ios::out);
+ fp1.open("book.dat",ios::in|ios::out);
  while(fp.read((char*)&st,sizeof(member))&&found==0)
  {
   if(strcmpi(st.retadmno(),sn)==0)
@@ -475,11 +476,11 @@ void search()
           } 
       }
      if(flag==0)
-     cout<<”book not found”;
+     cout<<"book not found";
    } 
   }
 if(found==0)  
-cout<<”member does not exist”;
+cout<<"member does not exist";
 getch();
 fp.close();
 fp1.close();
