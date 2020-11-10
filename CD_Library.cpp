@@ -2,9 +2,11 @@
 #include<fstream>
 #include<conio.h>
 #include<stdio.h>
+#include<cstdio>
 #include<process.h>
 #include<string.h>
 #include<string>
+
 using namespace std;
 class book
 {
@@ -53,8 +55,6 @@ class book
 };         
 
 
-
-
 class member
 {
 	char admno[50];
@@ -64,7 +64,7 @@ class member
 public:
 	void create_member()
 	{
-		clrscr();
+	//	clrscr();
 	 	cout<<"NEW MEMBER ENTRY";
 		cout<<"Enter The admission no.";
 		cin>>admno;
@@ -130,7 +130,7 @@ void write_book()
 	fp.open("book.dat",ios::out|ios::app);
 	do
 	{
-		clrscr();
+	//	clrscr();
 		bk.create_book();
 		fp.write((char*)&bk,sizeof(book));
 		cout<<"Do you want to add more records(y/n?)";
@@ -198,7 +198,7 @@ void modify_book()
 {
 	char n[50];
 	int found=0;
-	clrscr();
+//	clrscr();
 	cout<<"MODIFY BOOK REOCORD";
 	cout<<"Enter The book no. of The book";
 	cin>>n;
@@ -229,7 +229,7 @@ void modify_member()
 {
 	char n[50];
 	int found=0;
-	clrscr();
+	//clrscr();
 	cout<<"MODIFY MEMBER RECORD";
 	cout<<"Enter The admission no. of the member";
 	cin>>n;
@@ -258,7 +258,7 @@ void delete_member()
 {
 	char n[50];
 	int flag=0;	
-	clrscr();
+	//clrscr();
     	cout<<"DELETE MEMBER";
     	cout<<"Enter The admission no. of the member You Want To      Delete";
     	cin>>n;
@@ -287,7 +287,7 @@ void delete_member()
 void delete_book()
 {
 	char n[50];
-	clrscr();
+//	clrscr();
 	cout<<"DELETE BOOK";
 cout<<"Enter The Book no. of the Book You Want To Delete:";
 	cin>>n;
@@ -312,7 +312,7 @@ cout<<"Enter The Book no. of the Book You Want To Delete:";
 }
 void display_alls()
 {
-	clrscr();
+//	clrscr();
      	fp.open("member.dat",ios::in);
      	if(!fp)
      	{
@@ -336,7 +336,7 @@ void display_alls()
 }
 void display_allb()
 {
-	clrscr();
+//	clrscr();
 	fp.open("book.dat",ios::in);
 	if(!fp)
 	{
@@ -361,7 +361,7 @@ void book_issue()
 {
 	char sn[50],bn[50];
 	int found=0,flag=0;
-	clrscr();
+//	clrscr();
 	cout<<"BOOK ISSUE";
 	cout<<"Enter The member's admission no.";
 	cin>>sn;
@@ -408,7 +408,7 @@ void book_deposit()
 {
     char sn[50],bn[50];
     int found=0,flag=0,days,fine;
-    clrscr();
+ //   clrscr();
     cout<<"BOOK DEPOSIT";
     cout<<"Enter The member’s admission no.";
     cin>>sn;
@@ -487,7 +487,7 @@ fp1.close();
 }
 void admin_menu()
 {
-	clrscr();
+//	clrscr();
 	int ch2;
 	cout<<"ADMINISTRATOR MENU"<<endl;
 	cout<<"1.CREATE MEMBER RECORD"<<endl;
@@ -501,7 +501,7 @@ void admin_menu()
 	cout<<"9.MODIFY BOOK "<<endl;
 	cout<<"10.DELETE BOOK "<<endl;
 	cout<<"11.BACK TO MAIN MENU"<<endl;
-       cout<<”12.SEARCH MEMBER AND BOOK”<<endl;     
+       cout<<"12.SEARCH MEMBER AND BOOK"<<endl;     
 	cout<<"Please Enter Your Choice (1-12)"<<endl;
 	cin>>ch2;
 	switch(ch2)
@@ -537,7 +537,7 @@ void main()
 	int ch;
 	do
 	{
-		clrscr();
+		//clrscr();
 		cout<<"MAIN MENU";
 		cout<<"1.BOOK ISSUE";
 		cout<<"2.BOOK DEPOSIT";
@@ -547,7 +547,7 @@ void main()
 	  	cin>>ch;
 	  	switch(ch)
 	  	{
-			case 1:clrscr();
+			case 1://clrscr();
 				 book_issue();
 			   	 break;
 		  	case 2:book_deposit();
